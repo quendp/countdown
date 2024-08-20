@@ -8,26 +8,41 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  box-sizing: border-box !important;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.background-pink {
+  background-color: #FF9398;
+}
+
+.text-red {
+  color: #D14836;
+}
+
+.initial-animation {
+  transition: all 250ms ease-in-out;
+}
+
+.initial-animation img {
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
+
+.beating-heart-50 {
+  height: 50px;
+  width: 50px;
+  transition: all 250ms ease-in-out;
+}
+
+.beating-heart-60 {
+  height: 60px;
+  width: 60px;
+  transition: all 250ms ease-in-out;
+}
+
+.beating-heart-2500 {
+  height: 2500px;
+  width: 2500px;
+  transition: all 1s ease-in-out;
 }
