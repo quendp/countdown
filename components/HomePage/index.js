@@ -27,10 +27,28 @@ export default function HomePage({ isAnimationDone }) {
   }, [isAnimationDone]);
 
   return (
-    <section className="bg-rose-200 flex min-h-screen flex-col items-stretch justify-start p-3">
-      <p className="text-rose-700 font-bold mb-5 min-h-screen">
+    <section className="bg-rose-200 flex min-h-screen flex-col items-stretch justify-start p-3 font-sans">
+      <p className="text-rose-700 font-black mb-5">
         Together since September 23, 2023
       </p>
+      <p className="text-rose-700 font-thin">
+        Together since September 23, 2023
+      </p>
+      <p className="text-rose-700 font-normal">
+        Together since September 23, 2023
+      </p>
+
+      <p className="text-rose-700 font-black mb-5 font-serif">
+        Together since September 23, 2023
+      </p>
+      <p className="text-rose-700 font-thin font-serif">
+        Together since September 23, 2023
+      </p>
+      <p className="text-rose-700 font-normal font-serif">
+        Together since September 23, 2023
+      </p>
+
+
       <p className="text-rose-700 font-black text-5xl pb-14 min-h-screen">
         {monthsDiff} months
       </p>
