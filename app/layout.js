@@ -1,4 +1,5 @@
 import { poppins, rozhaOne } from "@/utilities/fonts";
+import PageAnimatePresence from "@/utilities/PageAnimatePresence";
 import "./globals.css";
 
 export const metadata = {
@@ -12,7 +13,9 @@ export default function RootLayout({ children }) {
       className={`${poppins.variable} ${rozhaOne.variable} font-sans scroll-smooth`}
       lang="en"
     >
-      <body>{children}</body>
+      <body>
+        <PageAnimatePresence>{children}</PageAnimatePresence>
+      </body>
     </html>
   );
 }

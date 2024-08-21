@@ -2,44 +2,56 @@
 
 import delay from "@/utilities/delay";
 import Image from "next/image";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-
 export default function InitialAnimation({ setIsAnimationDone }) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [imageClassName, setImageClassName] = useState("beating-heart-50");
   const [containerClassName, setContainerClassName] = useState("opacity-100");
   const [hideComponent, setHideComponent] = useState(false);
 
   const updateDimensions = useCallback(async () => {
+    let delayTime = 250;
+    if (searchParams?.get("noanimation") === "true") {
+      delayTime = 0;
+    }
     document.body.classList.add("overflow-y-hidden");
-    await delay(250);
+    await delay(delayTime);
     setImageClassName("beating-heart-60");
-    await delay(250);
+    await delay(delayTime);
     setImageClassName("beating-heart-50");
-    await delay(250);
+    await delay(delayTime);
     setImageClassName("beating-heart-60");
-    await delay(250);
+    await delay(delayTime);
     setImageClassName("beating-heart-50");
-    await delay(250);
+    await delay(delayTime);
     setImageClassName("beating-heart-60");
-    await delay(250);
+    await delay(delayTime);
     setImageClassName("beating-heart-50");
-    await delay(250);
+    await delay(delayTime);
     setImageClassName("beating-heart-60");
-    await delay(250);
+    await delay(delayTime);
     setImageClassName("beating-heart-50");
-    await delay(250);
+    await delay(delayTime);
     setImageClassName("beating-heart-2500");
-    await delay(500);
+    await delay(delayTime * 2);
     setContainerClassName("opacity-0");
-    await delay(500);
+    await delay(delayTime * 2);
     document.body.classList.remove("overflow-y-hidden");
+
+    const nextSearchParams = new URLSearchParams(searchParams.toString());
+    nextSearchParams.delete("noanimation");
+    router.replace(`${pathname}?${nextSearchParams}`);
+
     setIsAnimationDone(true);
     setHideComponent(true);
-  }, [setIsAnimationDone]);
+  }, [setIsAnimationDone, searchParams]);
 
   useEffect(() => {
     updateDimensions();
-  }, [updateDimensions]);
+  }, []);
 
   return hideComponent ? null : (
     <div
