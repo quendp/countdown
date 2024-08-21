@@ -18,7 +18,7 @@ export default function HomePage() {
   );
 
   return (
-    <section className="background-pink flex min-h-screen flex-col items-stretch justify-start p-3">
+    <section className="bg-rose-200 flex min-h-screen flex-col items-stretch justify-start p-3">
       <p className="text-rose-700 font-bold mb-5">
         Together since September 23, 2023
       </p>

@@ -40,9 +40,9 @@ export default function InitialAnimation() {
 
   return hideComponent ? null : (
     <div
-      className={`${containerClassName} initial-animation min-h-screen min-w-full fixed top-0 left-0 bg-gray-50 flex flex-col items-center justify-end`}
+      className={`${containerClassName} initial-animation min-h-screen min-w-full fixed top-0 left-0 bg-gray-50 flex flex-col items-center justify-center`}
     >
-      <p className="mb-0.5 font-sans text-sm text-rose-300 font-semibold">
+      <p className="mb-0.5 pt-40 font-sans text-sm text-rose-300 font-semibold">
         Franzel & Quen
       </p>
       <p className="mb-5 font-sans text-xs text-rose-300 font-extralight">
