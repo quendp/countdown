@@ -10,7 +10,13 @@ export default function Minutes() {
     <PageTransition key="home">
       <main className="min-h-screen bg-rose-200 w-full flex justify-center">
         <div className="flex flex-col items-center justify-start max-w-lg w-full p-10 font-sans text-rose-800">
-          <Link className="self-start flex" href="/?noanimation=true">
+          <Link
+            className="self-start flex"
+            href="/"
+            onClick={() => {
+              localStorage.setItem("noanimation", true);
+            }}
+          >
             <ChevronLeft /> Go Back
           </Link>
           <h1 className="font-serif text-rose-900 font-normal text-7xl mb-5">
