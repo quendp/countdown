@@ -35,7 +35,7 @@ export default function InitialAnimation({ setIsAnimationDone }) {
     document.body.classList.remove("overflow-y-hidden");
     setIsAnimationDone(true);
     setHideComponent(true);
-  }, []);
+  }, [setIsAnimationDone]);
 
   useEffect(() => {
     updateDimensions();
