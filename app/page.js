@@ -7,9 +7,9 @@ import { useState } from "react";
 export default function Home() {
   const [isAnimationDone, setIsAnimationDone] = useState(false);
   return (
-    <main>
+    <div>
       <InitialAnimation setIsAnimationDone={setIsAnimationDone} />
       <HomePage isAnimationDone={isAnimationDone} />
-    </main>
+    </div>
   );
 }

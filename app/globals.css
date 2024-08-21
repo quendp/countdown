@@ -46,3 +46,24 @@ body {
   width: 2500px;
   transition: all 1s ease-in-out;
 }
+
+.transition-opacity {
+  transition: opacity 500ms ease-in-out 500ms;
+}
+
+.paragraph {
+  display: flex;
+  line-height: 1;
+  flex-wrap: wrap;
+
+  .word {
+    position: relative;
+    margin-right: 12px;
+    margin-top: 8px;
+
+    .shadow {
+      position: absolute;
+      opacity: 20%;
+    }
+  }
+}

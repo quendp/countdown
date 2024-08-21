@@ -1,63 +1,42 @@
 "use client";
 
 import Lenis from "@studio-freight/lenis";
-import dayjs from "dayjs";
-import { useEffect, useMemo } from "react";
+import { useScroll } from "framer-motion";
+import { useEffect, useRef } from "react";
+import FirstSection from "./FirstSection";
+import SecondSection from "./SecondSection";
+import ThirdSection from "./ThirdSection";
 export default function HomePage({ isAnimationDone }) {
-  const monthsDiff = useMemo(
-    () => dayjs().diff(dayjs("2023-09-23"), "month"),
-    []
-  );
-  const daysDiff = useMemo(() => dayjs().diff(dayjs("2023-09-23"), "day"), []);
-  const hoursDiff = useMemo(
-    () => dayjs().diff(dayjs("2023-09-23"), "hour"),
-    []
-  );
-
+  // * lenis smooth scrolling finally nahanap din kita HAHAAHHA
   useEffect(() => {
     if (!isAnimationDone) return;
     const lenis = new Lenis();
-
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-
     requestAnimationFrame(raf);
   }, [isAnimationDone]);
 
+  // * This one is used for Perspective Section Transition of SecondSection and ThirdSection : ref - https://blog.olivierlarose.com/tutorials/perspective-section-transition
+  const container = useRef();
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end end"],
+  });
+
   return (
-    <section className="bg-rose-200 flex min-h-screen flex-col items-stretch justify-start p-3 font-sans">
-      <p className="text-rose-700 font-black mb-5">
-        Together since September 23, 2023
-      </p>
-      <p className="text-rose-700 font-thin">
-        Together since September 23, 2023
-      </p>
-      <p className="text-rose-700 font-normal">
-        Together since September 23, 2023
-      </p>
-
-      <p className="text-rose-700 font-black mb-5 font-serif">
-        Together since September 23, 2023
-      </p>
-      <p className="text-rose-700 font-thin font-serif">
-        Together since September 23, 2023
-      </p>
-      <p className="text-rose-700 font-normal font-serif">
-        Together since September 23, 2023
-      </p>
-
-
-      <p className="text-rose-700 font-black text-5xl pb-14 min-h-screen">
-        {monthsDiff} months
-      </p>
-      <p className="text-rose-600 font-black text-4xl pb-10 text-right min-h-screen">
-        {daysDiff} days
-      </p>
-      <p className="text-rose-500 font-black text-2xl pb-5 min-h-screen">
-        {hoursDiff} hours
-      </p>
-    </section>
+    <main
+      ref={container}
+      className="bg-rose-200 flex flex-col items-center justify-start"
+    >
+      <FirstSection isAnimationDone={isAnimationDone} />
+      {isAnimationDone && (
+        <div className="relative w-full h-[150vh] flex flex-col items-center justify-start bg-gray-800">
+          <SecondSection />
+          <ThirdSection scrollYProgress={scrollYProgress} />
+        </div>
+      )}
+    </main>
   );
 }
