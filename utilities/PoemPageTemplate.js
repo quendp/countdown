@@ -26,6 +26,7 @@ export default function PoemTemplate({
           </Link>
           <div className="images mb-10">
             <Image
+              className="rounded-md shadow-md shadow-rose-950"
               placeholder="blur"
               blurDataURL="/blur.jpg"
               src={imagesObj?.main}
@@ -34,6 +35,7 @@ export default function PoemTemplate({
             />
             <div className="imageContainer">
               <Image
+                className="rounded-md shadow-[3px_3px_6px_-1px] shadow-rose-950"
                 placeholder="blur"
                 blurDataURL="/blur.jpg"
                 src={imagesObj?.right}
@@ -43,6 +45,7 @@ export default function PoemTemplate({
             </div>
             <div className="imageContainer">
               <Image
+                className="rounded-md shadow-[-3px_3px_6px_-1px] shadow-rose-950"
                 placeholder="blur"
                 blurDataURL="/blur.jpg"
                 src={imagesObj?.left}
@@ -51,7 +54,7 @@ export default function PoemTemplate({
               />
             </div>
           </div>
-          <p className="font-light text-xs mb-3 text-center">"{imageTitle}"</p>
+          <p className="font-light text-xs mb-10 text-center">"{imageTitle}"</p>
           <h1 className="font-serif text-rose-900 font-normal text-3xl mb-3">
             {title}
           </h1>
