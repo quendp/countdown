@@ -125,7 +125,7 @@ const Column = ({ images, y, shownImage, setShownImage }) => {
             onClick={() => {
               setShownImage((prev) => (prev === src ? null : src));
             }}
-            className="rounded-lg shadow-lg shadow-rose-950 cursor-pointer"
+            className="rounded-lg shadow-[3px_3px_8px_-1px] shadow-rose-500 cursor-pointer"
             src={`/${src}`}
             alt="image"
             width={260}

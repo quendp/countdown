@@ -8,7 +8,7 @@ export default function ThirdSection({ scrollYProgress }) {
   return (
     <motion.section
       style={{ scale, rotate }}
-      className="min-h-screen overflow-hidden bg-rose-500 w-full relative rounded-lg"
+      className="min-h-screen overflow-hidden bg-rose-300 w-full relative rounded-lg"
     >
       <ParallaxGallery />
     </motion.section>
