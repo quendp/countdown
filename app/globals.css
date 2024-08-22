@@ -126,7 +126,12 @@ body {
 .galleryWrapper {
   .column {
     .imageContainer {
+      &.showImage img {
+        height: 300px;
+        width: 260px;
+      }
       img {
+        transition: all 100ms ease-in-out;
         object-fit: cover;
         height: 150px;
         width: 130px;

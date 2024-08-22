@@ -1,8 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-// import { motion } from "framer-motion";
-// import { useRef } from "react";
 
 const images = [
   "day1.jpg",
@@ -23,6 +21,7 @@ const images = [
 ];
 
 export default function ParallaxGallery() {
+  const [shownImage, setShownImage] = useState(null);
   const gallery = useRef(null);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
@@ -55,6 +54,8 @@ export default function ParallaxGallery() {
       <div ref={gallery} className="gallery">
         <div className="galleryWrapper flex justify-center">
           <Column
+            shownImage={shownImage}
+            setShownImage={setShownImage}
             y={y}
             images={[
               images[0],
@@ -70,6 +71,8 @@ export default function ParallaxGallery() {
             ]}
           />
           <Column
+            shownImage={shownImage}
+            setShownImage={setShownImage}
             y={y2}
             images={[
               images[5],
@@ -85,6 +88,8 @@ export default function ParallaxGallery() {
             ]}
           />
           <Column
+            shownImage={shownImage}
+            setShownImage={setShownImage}
             y={y3}
             images={[
               images[10],
@@ -106,24 +111,30 @@ export default function ParallaxGallery() {
   );
 }
 
-const Column = ({ images, y }) => {
+const Column = ({ images, y, shownImage, setShownImage }) => {
   return (
-    <motion.div className="column" style={{ y }}>
-      {images.map((src, i) => {
-        return (
-          <div key={i} className="imageContainer p-2">
-            <Image
-              className="rounded-lg shadow-lg shadow-rose-950"
-              src={`/${src}`}
-              alt="image"
-              width={110}
-              height={130}
-              placeholder="blur"
-              blurDataURL="/blur.jpg"
-            />
-          </div>
-        );
-      })}
+    <motion.div className="column flex flex-col items-center" style={{ y }}>
+      {images.map((src, i) => (
+        <div
+          key={i}
+          className={`${
+            shownImage === src ? "showImage" : ""
+          } imageContainer p-2`}
+        >
+          <Image
+            onClick={() => {
+              setShownImage((prev) => (prev === src ? null : src));
+            }}
+            className="rounded-lg shadow-lg shadow-rose-950 cursor-pointer"
+            src={`/${src}`}
+            alt="image"
+            width={260}
+            height={300}
+            placeholder="blur"
+            blurDataURL="/blur.jpg"
+          />
+        </div>
+      ))}
     </motion.div>
   );
 };
