@@ -4,14 +4,16 @@ import delay from "@/utilities/delay";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 export default function InitialAnimation({ setIsAnimationDone }) {
+  const isNoAnimation =
+    typeof window !== "undefined" &&
+    localStorage?.getItem("noanimation") === "true";
   const [imageClassName, setImageClassName] = useState("beating-heart-50");
   const [containerClassName, setContainerClassName] = useState("opacity-100");
   const [hideComponent, setHideComponent] = useState(false);
 
   const updateDimensions = useCallback(async () => {
-    const isNoAnimation = localStorage.getItem("noanimation");
     let delayTime = 250;
-    if (isNoAnimation === "true") {
+    if (localStorage.getItem("noanimation") === "true") {
       delayTime = 0;
     }
     document.body.classList.add("overflow-y-hidden");
@@ -36,17 +38,17 @@ export default function InitialAnimation({ setIsAnimationDone }) {
     await delay(delayTime * 2);
     setContainerClassName("opacity-0");
     await delay(delayTime * 2);
-    document.body.classList.remove("overflow-y-hidden");
-    localStorage.removeItem("noanimation");
     setIsAnimationDone(true);
     setHideComponent(true);
+    document.body.classList.remove("overflow-y-hidden");
+    localStorage.removeItem("noanimation");
   }, [setIsAnimationDone]);
 
   useEffect(() => {
     updateDimensions();
   }, []);
 
-  return hideComponent ? null : (
+  return hideComponent || isNoAnimation ? <></> : (
     <div
       className={`${containerClassName} initial-animation min-h-screen min-w-full fixed top-0 left-0 bg-gray-50 flex flex-col items-center justify-center`}
     >

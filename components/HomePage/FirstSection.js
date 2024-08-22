@@ -34,37 +34,37 @@ export default function FirstSection({ isAnimationDone }) {
         href="/years"
         className="text-rose-700 font-black text-6xl font-serif"
       >
-        {duration?.years} years
+        {duration?.years ?? ""} years
       </Link>
       <Link
         className="text-rose-700 font-black text-6xl font-serif"
         href="/months"
       >
-        {duration?.months} months
+        {duration?.months ?? ""} months
       </Link>
       <Link
         className="text-rose-700 font-black text-6xl font-serif"
         href="/days"
       >
-        {duration?.days} days
+        {duration?.days ?? ""} days
       </Link>
       <Link
         className="text-rose-700 font-black text-6xl font-serif"
         href="/hours"
       >
-        {duration?.hours} hours
+        {duration?.hours ?? ""} hours
       </Link>
       <Link
         className="text-rose-700 font-black text-6xl font-serif"
         href="/minutes"
       >
-        {duration?.minutes} minutes
+        {duration?.minutes ?? ""} minutes
       </Link>
       <Link
         className="text-rose-700 font-black text-6xl font-serif"
         href="/seconds"
       >
-        {duration?.seconds} seconds
+        {duration?.seconds ?? ""} seconds
       </Link>
     </section>
   );
