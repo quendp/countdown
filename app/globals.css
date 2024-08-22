@@ -86,36 +86,51 @@ body {
   }
 }
 
-.images {
-  display: flex;
-  height: 180px;
-  width: 160px;
-  justify-content: center;
-  position: relative;
-
-  img {
-    object-fit: cover;
-  }
-
-  .imageContainer {
-    position: absolute;
-
-    &:nth-of-type(1) {
-      left: 140px;
-      top: 50px;
-      height: 120px;
-      width: 100px;
-      z-index: 2;
-      transform: rotate(0.05turn);
+.poemTemplate {
+  .images {
+    display: flex;
+    height: 180px;
+    width: 160px;
+    justify-content: center;
+    position: relative;
+  
+    img {
+      object-fit: cover;
     }
+  
+    .imageContainer {
+      position: absolute;
+  
+      &:nth-of-type(1) {
+        left: 140px;
+        top: 50px;
+        height: 120px;
+        width: 100px;
+        z-index: 2;
+        transform: rotate(0.05turn);
+      }
+  
+      &:nth-of-type(2) {
+        left: -80px;
+        top: 100px;
+        height: 120px;
+        width: 100px;
+        z-index: 3;
+        transform: rotate(-0.03turn);
+      }
+    }
+  }
+  
+}
 
-    &:nth-of-type(2) {
-      left: -80px;
-      top: 100px;
-      height: 120px;
-      width: 100px;
-      z-index: 3;
-      transform: rotate(-0.03turn);
+.galleryWrapper {
+  .column {
+    .imageContainer {
+      img {
+        object-fit: cover;
+        height: 150px;
+        width: 130px;
+      }
     }
   }
 }

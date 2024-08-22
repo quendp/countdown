@@ -13,7 +13,7 @@ export default function PoemTemplate({
 }) {
   return (
     <PageTransition key="home">
-      <main className="min-h-screen bg-rose-200 w-full flex justify-center overflow-hidden">
+      <main className="poemTemplate min-h-screen bg-rose-200 w-full flex justify-center overflow-hidden">
         <div className="flex flex-col items-center justify-start max-w-lg w-full p-5 font-sans text-rose-800">
           <Link
             className="self-start flex mb-5 text-sm"
