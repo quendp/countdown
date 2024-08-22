@@ -6,9 +6,9 @@ import { useMemo } from "react";
 export default function Hours() {
   const imagesObj = useMemo(
     () => ({
-      main: "/hours3.webp",
-      right: "/hours2.webp",
-      left: "/hours1.webp",
+      main: "/hours3.jpg",
+      right: "/hours2.jpg",
+      left: "/hours1.jpg",
     }),
     []
   );

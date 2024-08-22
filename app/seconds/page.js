@@ -6,9 +6,9 @@ import { useMemo } from "react";
 export default function Seconds() {
   const imagesObj = useMemo(
     () => ({
-      main: "/years1.jpg",
-      right: "/years2.jpg",
-      left: "/years3.jpg",
+      main: "/seconds1.jpg",
+      right: "/seconds2.jpg",
+      left: "/seconds3.jpg",
     }),
     []
   );
@@ -17,15 +17,18 @@ export default function Seconds() {
     <PoemTemplate
       imagesObj={imagesObj}
       title="Seconds"
-      imageTitle="See you again in 8 years"
+      imageTitle="To grow old with you"
     >
-      <p>60 seconds in a minute, 60 minutes in an hour.</p>
-      <p>24 hours in a day, 30 days in a month.</p>
-      <p>12 months in year, never feels enough.</p>
+      <p>In each second I get to spend with you,</p>
+      <p>I tell my self that love is true,</p>
+      <p>I may not be perfect, and sometimes mean,</p>
+      <p className="mb-5"> But I{"'"}ll be better for you my queen.</p>
       <p>As we venture this unfair world of ours,</p>
-      <p>We{"'"}ll grow and age in each other{"'"} arms,</p>
-      <p>All my seconds are for you, ,</p>
-      <p>You are my rest, for the rest of my life.</p>
+      <p>
+        We{"'"}ll grow and age in each other{"'"} arms,
+      </p>
+      <p>Holding you even in our subsequent lives,</p>
+      <p>Because even time itself cannot do as part.</p>
     </PoemTemplate>
   );
 }

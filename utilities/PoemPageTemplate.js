@@ -25,12 +25,30 @@ export default function PoemTemplate({
             <ChevronLeft size={18} /> Go Back
           </Link>
           <div className="images mb-10">
-            <Image src={imagesObj?.main} alt="First pic" fill />
+            <Image
+              placeholder="blur"
+              blurDataURL="/blur.jpg"
+              src={imagesObj?.main}
+              alt="First pic"
+              fill
+            />
             <div className="imageContainer">
-              <Image src={imagesObj?.right} alt="First pic" fill />
+              <Image
+                placeholder="blur"
+                blurDataURL="/blur.jpg"
+                src={imagesObj?.right}
+                alt="First pic"
+                fill
+              />
             </div>
             <div className="imageContainer">
-              <Image src={imagesObj?.left} alt="First pic" fill />
+              <Image
+                placeholder="blur"
+                blurDataURL="/blur.jpg"
+                src={imagesObj?.left}
+                alt="First pic"
+                fill
+              />
             </div>
           </div>
           <p className="font-light text-xs mb-3 text-center">"{imageTitle}"</p>

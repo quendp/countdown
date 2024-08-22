@@ -7,7 +7,7 @@ export default function Days() {
   const imagesObj = useMemo(
     () => ({
       main: "/day1.jpg",
-      right: "/day2.jpeg",
+      right: "/day2.jpg",
       left: "/day3.jpg",
     }),
     []
