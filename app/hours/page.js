@@ -20,7 +20,7 @@ export default function Hours() {
       imageTitle="An hour feels like a second with you"
     >
       <p>My head is full of thoughts in every hour,</p>
-      <p>"When will I see you again?" and "I miss you a lot".</p>
+      <p>&quot;When will I see you again?&quot; and &quot;I miss you a lot&quot;.</p>
       <p>Time flies so fast, when we{"'"}re together,</p>
       <p>But slows down and stops when we{"'"}re apart {":<"} </p>
     </PoemTemplate>
