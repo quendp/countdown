@@ -33,9 +33,9 @@ export default function ParallaxGallery() {
 
   const { height } = dimension;
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, height * -2.3]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * -3]);
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * -1.5]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, height * -0.8]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * -1.2]);
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * -0.4]);
 
   useEffect(() => {
     const resize = () => {
