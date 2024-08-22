@@ -56,7 +56,7 @@ export default function InitialAnimation({ setIsAnimationDone }) {
         Franzel & Quen
       </p>
       <p className="mb-5 font-sans text-xs text-rose-300 font-light">
-        Since September 23, 2023
+        Our Time Together
       </p>
       <Image
         className={`${imageClassName} fixed top-1/2 left-1/2`}
