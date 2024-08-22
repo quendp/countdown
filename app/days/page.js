@@ -6,9 +6,9 @@ import { useMemo } from "react";
 export default function Days() {
   const imagesObj = useMemo(
     () => ({
-      main: "/years1.jpg",
-      right: "/years2.jpg",
-      left: "/years3.jpg",
+      main: "/day1.jpg",
+      right: "/day2.jpeg",
+      left: "/day3.jpg",
     }),
     []
   );
@@ -17,12 +17,12 @@ export default function Days() {
     <PoemTemplate
       imagesObj={imagesObj}
       title="Days"
-      imageTitle="See you again in 8 years"
+      imageTitle="Magkamukha na tayo HAHAHAHAHA"
     >
-      <p>For 8 long years we{"'"}ve been apart,</p>
-      <p>We met again for a brand new start,</p>
-      <p>An unexpected love that changed my life,</p>
-      <p>Healed our scars and restored our hearts.</p>
+      <p>You are my first thought when my day starts,</p>
+      <p>You are also the last one as I sleep at night,</p>
+      <p>Some days are cold, some days are tough,</p>
+      <p>Each day is worth it, with my other half.</p>
     </PoemTemplate>
   );
 }
