@@ -1,16 +1,11 @@
-import { motion, useTransform } from "framer-motion";
 import ParallaxGallery from "./ParallaxGallery";
 
-export default function ThirdSection({ scrollYProgress }) {
-  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const rotate = useTransform(scrollYProgress, [0, 1], [5, 0]);
-
+export default function ThirdSection() {
   return (
-    <motion.section
-      style={{ scale, rotate }}
-      className="min-h-screen overflow-hidden bg-rose-300 w-full relative rounded-lg"
+    <section
+      className="min-h-[150vh] overflow-hidden bg-rose-300 w-full relative px-1"
     >
       <ParallaxGallery />
-    </motion.section>
+    </section>
   );
 }
