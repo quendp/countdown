@@ -126,15 +126,17 @@ body {
 .galleryWrapper {
   .column {
     .imageContainer {
+      transition: all 400ms ease-in-out;
+
       &.showImage img {
-        height: 500px;
-        width: 500px;
+        height: 400px;
+        width: 850px;
       }
       img {
-        transition: all 100ms ease-in-out;
+        transition: all 400ms ease-in-out;
         object-fit: cover;
         height: 150px;
-        width: 100%;
+        width: 300px;
       }
     }
   }

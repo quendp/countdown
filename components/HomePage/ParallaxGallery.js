@@ -102,7 +102,7 @@ const Column = ({ images, y, shownImage, setShownImage, index }) => {
             shownImage?.src === src &&
             index === shownImage?.index &&
             i === shownImage?.i
-              ? "showImage"
+              ? "showImage grayscale-0"
               : "grayscale"
           } imageContainer p-1`}
         >
