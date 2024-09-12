@@ -96,6 +96,13 @@ body {
   
     img {
       object-fit: cover;
+      transition: all 400ms ease-in-out;
+      min-width: 0px;
+    }
+
+    .main {
+      height: 180px;
+      width: 160px;
     }
   
     .imageContainer {
@@ -118,9 +125,32 @@ body {
         z-index: 3;
         transform: rotate(-0.03turn);
       }
+
+      &:has(.showPoemImg) {
+        z-index: 1000;
+      }
     }
   }
-  
+  .showPoemImg {
+    height: 300px !important;
+    min-width: 250px !important;
+    z-index: 999 !important;
+
+    &.main {
+      left: -45px !important;
+    }
+
+    &.right {
+      transform: rotate(-0.05turn) !important;
+      left: -170px !important;
+      top: -30px !important;
+    }
+    &.left {
+      transform: rotate(0.03turn) !important;
+      left: 38px !important;
+      top: -90px !important;
+    }
+  }
 }
 
 .galleryWrapper {
