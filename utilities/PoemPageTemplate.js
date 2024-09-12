@@ -4,7 +4,7 @@ import PageTransition from "@/utilities/PageTransition";
 import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 export default function PoemTemplate({
   imagesObj,
@@ -13,6 +13,13 @@ export default function PoemTemplate({
   children,
 }) {
   const [showImage, setShowImage] = useState(null);
+
+  const images = useMemo(() => [
+    { key: 'main', src: imagesObj?.main, shadow: 'shadow-md' },
+    { key: 'right', src: imagesObj?.right, shadow: 'shadow-[3px_3px_6px_-1px]' },
+    { key: 'left', src: imagesObj?.left, shadow: 'shadow-[-3px_3px_6px_-1px]' }
+  ], [imagesObj]);
+
   return (
     <PageTransition key="home">
       <main className="poemTemplate min-h-screen bg-rose-200 w-full flex justify-center overflow-hidden">
@@ -26,52 +33,27 @@ export default function PoemTemplate({
           >
             <ChevronLeft size={18} /> Go Back
           </Link>
-          <div className="images mb-10">
-            <Image
-              className={`rounded-md shadow-md shadow-rose-950 main ${
-                showImage === imagesObj?.main ? "showPoemImg" : ""
-              }`}
-              placeholder="blur"
-              blurDataURL="/blur.jpg"
-              src={imagesObj?.main}
-              alt="First pic"
-              fill
-              onClick={() => {
-                setShowImage((prev) => (prev ? null : imagesObj?.main));
-              }}
-            />
-            <div className="imageContainer">
-              <Image
-                className={`rounded-md shadow-[3px_3px_6px_-1px] shadow-rose-950 ${
-                  showImage === imagesObj?.right ? "showPoemImg" : ""
-                } right`}
-                placeholder="blur"
-                blurDataURL="/blur.jpg"
-                src={imagesObj?.right}
-                alt="First pic"
-                onClick={() => {
-                  setShowImage((prev) => (prev ? null : imagesObj?.right));
-                }}
-                fill
-              />
-            </div>
-            <div className="imageContainer">
-              <Image
-                className={`rounded-md shadow-[-3px_3px_6px_-1px] shadow-rose-950 left ${
-                  showImage === imagesObj?.left ? "showPoemImg" : ""
-                }`}
-                placeholder="blur"
-                blurDataURL="/blur.jpg"
-                src={imagesObj?.left}
-                onClick={() => {
-                  setShowImage((prev) => (prev ? null : imagesObj?.left));
-                }}
-                alt="First pic"
-                fill
-              />
-            </div>
+          <div className="images mt-10 mb-8 border-4 border-rose-300 rounded-lg p-2">
+            {images.map(({ key, src, shadow }) => (
+              <div
+                key={key}
+                className={`imageContainer ${key} ${showImage === src ? "showPoemImg" : ""}`}
+              >
+                <Image
+                  className={`rounded-md ${shadow} shadow-rose-950`}
+                  placeholder="blur"
+                  blurDataURL="/blur.jpg"
+                  src={src}
+                  alt={`${key} pic`}
+                  fill
+                  onClick={() => {
+                    setShowImage((prev) => (prev ? null : src));
+                  }}
+                />
+              </div>
+            ))}
           </div>
-          <p className="font-light text-xs mb-10 text-center">"{imageTitle}"</p>
+          <p className="font-light text-xs mb-5 text-center">"{imageTitle}"</p>
           <h1 className="font-serif text-rose-900 font-normal text-3xl mb-3">
             {title}
           </h1>
