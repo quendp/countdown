@@ -2,6 +2,7 @@
 
 import { dateTimeCounter } from "@/utilities/dateTimeCounter";
 import useInterval from "@/utilities/useInterval";
+import { ArrowBigLeft, ArrowBigRight, Mail } from "lucide-react";
 import Link from "next/link";
 import React, { useMemo, useState } from "react";
 
@@ -13,6 +14,10 @@ function FirstSection({ isAnimationDone }) {
   useInterval(() => {
     setDuration(dateTimeCounter(startTime));
   }, 1000);
+
+  const isAnniversary = useMemo(() => {
+    return duration?.days === 0 && duration?.months === 0;
+  }, [duration]);
 
   const timeUnits = useMemo(() => {
     const { years, months, days, hours, minutes, seconds } = duration;
@@ -62,7 +67,20 @@ function FirstSection({ isAnimationDone }) {
     >
       <p className="text-rose-300 text-sm flex justify-center items-center w-full -mt-10 mb-10">
         <span className="bg-rose-300 w-1/4 h-0.5" />
-        <span className="px-3 w-1/2 text-center">Click any text below</span>
+        {isAnniversary ? (
+          <span className="w-1/2 text-center text-rose-800 text-2xl font-bold">
+            Happy Anniversary my love!
+            <div className="flex justify-center items-center gap-2 mt-2">
+              <ArrowBigRight size={35} strokeWidth={1} />
+              <Link href={"/first-anniversary"}>
+                <Mail size={40} strokeWidth={1.5} className="animate-bounce" />
+              </Link>
+              <ArrowBigLeft size={35} strokeWidth={1} />
+            </div>
+          </span>
+        ) : (
+          <span className="px-3 w-1/2 text-center">Click any text below</span>
+        )}
         <span className="bg-rose-300 w-1/4 h-0.5" />
       </p>
       {timeUnits.map(({ href, value, label }) => (
