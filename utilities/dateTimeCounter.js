@@ -7,8 +7,7 @@ dayjs.extend(utc);
 
 export function dateTimeCounter(startDate) {
   const start = dayjs(startDate).utc();
-  // const now = dayjs().utc();
-  const now = dayjs().subtract(50, 'minute').utc();
+  const now = dayjs().utc();
 
   const years = now.diff(start, "year");
   const months = now.diff(start.add(years, "year"), "month");
