@@ -7,10 +7,9 @@ const MESSAGES_ARRAY = [
     title: "Our First Anniversary Together",
     date: "Sept 23, 2024",
     link: "/first-anniversary",
-  },
-  {
+  },  {
     id: 1,
-    title: "First Anniversary With You",
+    title: "Our First Anniversary Together",
     date: "Sept 23, 2024",
     link: "/first-anniversary",
   },
@@ -18,8 +17,8 @@ const MESSAGES_ARRAY = [
 
 export default function FourthSection() {
   return (
-    <section className="min-h-[500px] bg-gray-800 w-full px-1 flex justify-center">
-      <div className="max-w-lg w-full p-3">
+    <section className="min-h-[500px] bg-gray-800 w-full p-2 flex justify-center">
+      <div className="max-w-lg w-full">
         <h2 className="text-rose-200 text-5xl font-serif text-center">
           Messages
         </h2>
@@ -27,7 +26,7 @@ export default function FourthSection() {
           {MESSAGES_ARRAY.map((message) => (
             <div
               key={message.id}
-              className="w-1/2 p-1"
+              className="w-1/2 p-2"
             >
               <div className="flex justify-between items-center flex-col bg-rose-200 rounded-md p-1 h-24">
                 <h3 className="text-sm text-center text-rose-800">{message.title}</h3>
