@@ -7,11 +7,6 @@ const MESSAGES_ARRAY = [
     title: "Our First Anniversary Together",
     date: "Sept 23, 2024",
     link: "/first-anniversary",
-  },  {
-    id: 1,
-    title: "Our First Anniversary Together",
-    date: "Sept 23, 2024",
-    link: "/first-anniversary",
   },
 ];
 
