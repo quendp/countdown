@@ -64,7 +64,7 @@ export default function ParallaxGallery() {
   );
 
   return (
-    <div className="parallaxGallery z-10">
+    <div className="parallaxGallery z-10 max-w-lg w-full">
       <div ref={gallery} className="gallery">
         <div className="galleryWrapper flex justify-center">
           {columns.map((column, index) => (

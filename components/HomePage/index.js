@@ -7,6 +7,7 @@ import { useEffect } from "react";
 const FirstSection = dynamic(() => import("./FirstSection"));
 const SecondSection = dynamic(() => import("./SecondSection"));
 const ThirdSection = dynamic(() => import("./ThirdSection"));
+const FourthSection = dynamic(() => import("./FourthSection"));
 
 export default function HomePage({ isAnimationDone }) {
   useEffect(() => {
@@ -26,6 +27,7 @@ export default function HomePage({ isAnimationDone }) {
         <div className="relative w-full h-[150vh] flex flex-col items-center justify-start bg-gray-800">
           <SecondSection />
           <ThirdSection />
+          <FourthSection />
         </div>
       )}
     </main>

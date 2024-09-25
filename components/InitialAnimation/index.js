@@ -55,9 +55,6 @@ export default function InitialAnimation({ setIsAnimationDone }) {
       <p className="mb-0.5 pt-40 font-serif text-lg text-rose-300">
         Franzel & Quen
       </p>
-      <p className="mb-5 font-sans text-xs text-rose-300 font-light">
-        Our Time Together
-      </p>
       <Image
         className={`${imageClassName} fixed top-1/2 left-1/2`}
         src="/heart-big-image.png"

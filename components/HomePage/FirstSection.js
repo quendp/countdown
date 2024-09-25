@@ -2,7 +2,7 @@
 
 import { dateTimeCounter } from "@/utilities/dateTimeCounter";
 import useInterval from "@/utilities/useInterval";
-import { ArrowBigLeft, ArrowBigRight, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import Link from "next/link";
 import React, { useMemo, useState } from "react";
 
@@ -71,15 +71,13 @@ function FirstSection({ isAnimationDone }) {
           <span className="w-1/2 text-center text-rose-800 text-2xl font-bold">
             Happy Anniversary my love!
             <div className="flex justify-center items-center gap-2 mt-2">
-              <ArrowBigRight size={35} strokeWidth={1} />
               <Link href={"/first-anniversary"}>
                 <Mail size={40} strokeWidth={1.5} className="animate-bounce" />
               </Link>
-              <ArrowBigLeft size={35} strokeWidth={1} />
             </div>
           </span>
         ) : (
-          <span className="px-3 w-1/2 text-center">Click any text below</span>
+          <span className="px-3 w-1/2 text-center">My Time With You</span>
         )}
         <span className="bg-rose-300 w-1/4 h-0.5" />
       </p>
@@ -87,7 +85,7 @@ function FirstSection({ isAnimationDone }) {
         <Link
           key={href}
           href={href}
-          className="text-rose-700 font-black text-6xl font-serif"
+          className="text-rose-700 font-black text-6xl font-serif hover:text-rose-900"
         >
           {value} {label}
         </Link>
