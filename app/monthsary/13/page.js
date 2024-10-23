@@ -38,7 +38,7 @@ export default function Monthsary13() {
       <div className="flex justify-center items-center gap-2 mt-2">
         <Link
           href={"/games/quiz-1"}
-          className="flex items-center justify-center text-xs gap-1 font-light bg-rose-300 rounded-md w-full text-rose-900 hover:bg-rose-400 p-1"
+          className="flex items-center justify-center text-xs gap-1 font-light bg-rose-300 rounded-md w-full text-rose-900 hover:bg-rose-400 p-1 py-3"
         >
           🩷 Click Here 🩷
         </Link>

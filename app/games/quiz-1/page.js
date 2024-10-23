@@ -49,7 +49,7 @@ export default function Quiz1Page() {
                     color: "#9f1239 !important",
                   },
                 }}
-                className="w-full my-3 "
+                className="w-full my-3"
                 id="outlined-password-input"
                 label="Password"
                 type="password"
@@ -63,6 +63,11 @@ export default function Quiz1Page() {
               <Button
                 variant="contained"
                 className="bg-rose-800 text-rose-200 self-end"
+                sx={{
+                  backgroundColor: "#9f1239 !important",
+                  color: "#fecdd3 !important",
+                  marginTop: "15px",
+                }}
                 onClick={handleSubmit}
               >
                 Submit

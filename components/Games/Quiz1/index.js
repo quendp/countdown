@@ -96,9 +96,10 @@ export default function Quiz1() {
   return (
     <div className="w-full flex flex-col items-center justify-center">
       <p className="text-md mb-5">
-        Remember &quot;six&quot;? HAHAHAAHAHA akala mo mag aano na tayo kahit yung oras
-        talaga tinutukoy ko HAHAAHAHAHAHAAH yun siguro talaga iniisip mo nun no?
-        Anyway dahil excited ka magpatusok, magreview muna tayo HAHAAHAHAH🤭
+        Remember &quot;six&quot;? HAHAHAAHAHA akala mo mag aano na tayo kahit
+        yung oras talaga tinutukoy ko HAHAAHAHAHAHAAH yun siguro talaga iniisip
+        mo nun no? Anyway dahil excited ka magpatusok, magreview muna tayo
+        HAHAAHAHAH🤭
       </p>
       <p className="mb-5 font-semibold">Score: {score}</p>
       {currentQuestion < 5 ? (
@@ -111,6 +112,10 @@ export default function Quiz1() {
                 disabled={isButtonClicked}
                 variant="contained"
                 className="bg-rose-800 text-rose-200 w-full"
+                sx={{
+                  backgroundColor: "#9f1239 !important",
+                  color: "#fecdd3 !important",
+                }}
                 onClick={() =>
                   handleButtonClick(QUESTIONS[currentQuestion].options[0])
                 }
@@ -118,6 +123,10 @@ export default function Quiz1() {
                 {QUESTIONS[currentQuestion].options[0]}
               </Button>
               <Button
+                sx={{
+                  backgroundColor: "#9f1239 !important",
+                  color: "#fecdd3 !important",
+                }}
                 disabled={isButtonClicked}
                 variant="contained"
                 className="bg-rose-800 text-rose-200 w-full"
@@ -130,6 +139,10 @@ export default function Quiz1() {
             </div>
             <div className="flex gap-3 justify-evenly">
               <Button
+                sx={{
+                  backgroundColor: "#9f1239 !important",
+                  color: "#fecdd3 !important",
+                }}
                 disabled={isButtonClicked}
                 variant="contained"
                 className="bg-rose-800 text-rose-200 w-full"
@@ -140,6 +153,10 @@ export default function Quiz1() {
                 {QUESTIONS[currentQuestion].options[2]}
               </Button>
               <Button
+                sx={{
+                  backgroundColor: "#9f1239 !important",
+                  color: "#fecdd3 !important",
+                }}
                 disabled={isButtonClicked}
                 variant="contained"
                 className="bg-rose-800 text-rose-200 w-full"
@@ -151,7 +168,6 @@ export default function Quiz1() {
               </Button>
             </div>
           </div>
-          
           {showErrorMessage && (
             <p className="flex flex-col text-sm bg-rose-800 text-rose-200 items-center rounded-md p-2 text-center my-5">
               <X size={20} className="mr-3" />
@@ -183,7 +199,8 @@ export default function Quiz1() {
         <div className="bg-rose-300 text-red-900 p-5 rounded-lg flex flex-col">
           You got {score} out of 5!!!
           <p className="my-3">{SCORE_MESSAGES[score]}</p>
-          Thanks for playing babyy! Sana nagenjoy ka kahit papano HAAHAHAH I love youu sooo muchhh💗💗💗
+          Thanks for playing babyy! Sana nagenjoy ka kahit papano HAAHAHAH I
+          love youu sooo muchhh💗💗💗
         </div>
       )}
     </div>
