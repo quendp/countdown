@@ -96,7 +96,7 @@ export default function Quiz1() {
   return (
     <div className="w-full flex flex-col items-center justify-center">
       <p className="text-md mb-5">
-        Remember "six"? HAHAHAAHAHA akala mo mag aano na tayo kahit yung oras
+        Remember &quot;six&quot;? HAHAHAAHAHA akala mo mag aano na tayo kahit yung oras
         talaga tinutukoy ko HAHAAHAHAHAHAAH yun siguro talaga iniisip mo nun no?
         Anyway dahil excited ka magpatusok, magreview muna tayo HAHAAHAHAH🤭
       </p>
