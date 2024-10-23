@@ -8,6 +8,11 @@ import React, { useMemo, useState } from "react";
 
 const startTime = "2023-09-23T18:55";
 
+const currentEvent = {
+  title: "Happy 13th Monthsary my love!",
+  link: "/monthsary/13",
+};
+
 function FirstSection({ isAnimationDone }) {
   const [duration, setDuration] = useState(dateTimeCounter(startTime));
 
@@ -15,8 +20,8 @@ function FirstSection({ isAnimationDone }) {
     setDuration(dateTimeCounter(startTime));
   }, 1000);
 
-  const isAnniversary = useMemo(() => {
-    return duration?.days === 0 && duration?.months === 0;
+  const isMonthsary = useMemo(() => {
+    return duration?.days === 0;
   }, [duration]);
 
   const timeUnits = useMemo(() => {
@@ -67,11 +72,11 @@ function FirstSection({ isAnimationDone }) {
     >
       <p className="text-rose-300 text-sm flex justify-center items-center w-full -mt-10 mb-10">
         <span className="bg-rose-300 w-1/4 h-0.5" />
-        {isAnniversary ? (
+        {isMonthsary ? (
           <span className="w-1/2 text-center text-rose-800 text-2xl font-bold">
-            Happy Anniversary my love!
+            {currentEvent.title}
             <div className="flex justify-center items-center gap-2 mt-2">
-              <Link href={"/first-anniversary"}>
+              <Link href={currentEvent.link}>
                 <Mail size={40} strokeWidth={1.5} className="animate-bounce" />
               </Link>
             </div>

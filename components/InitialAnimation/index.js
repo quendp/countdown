@@ -52,7 +52,7 @@ export default function InitialAnimation({ setIsAnimationDone }) {
     <div
       className={`${containerClassName} initial-animation min-h-screen min-w-full fixed top-0 left-0 bg-gray-50 flex flex-col items-center justify-center`}
     >
-      <p className="mb-0.5 pt-40 font-serif text-lg text-rose-300">
+      <p className="mb-0.5 pt-28 font-serif text-lg text-rose-300">
         Franzel & Quen
       </p>
       <Image

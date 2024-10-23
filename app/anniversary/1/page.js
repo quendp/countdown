@@ -3,12 +3,12 @@
 import PoemTemplate from "@/utilities/PoemPageTemplate";
 import { useMemo } from "react";
 
-export default function Years() {
+export default function Anniversary1() {
   const imagesObj = useMemo(
     () => ({
-      main: "/anniv1.jpg",
-      right: "/anniv2.jpg",
-      left: "/anniv3.jpg",
+      main: "/anniversary/1/a.jpg",
+      right: "/anniversary/1/b.jpg",
+      left: "/anniversary/1/c.jpg",
     }),
     []
   );
