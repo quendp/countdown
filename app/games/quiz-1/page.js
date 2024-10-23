@@ -41,7 +41,7 @@ export default function Quiz1Page() {
                 strokeWidth={1.5}
                 className="animate-bounce mb-5"
               />
-              <p className="text-xs w-full">Hint: name of our teddy bear🐻</p>
+              <p className="text-xs w-full mb-3">Hint: name of our teddy bear🐻</p>
               <TextField
                 sx={{
                   label: { color: "#9f1239 !important" },
