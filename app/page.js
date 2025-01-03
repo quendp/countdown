@@ -1,5 +1,7 @@
 "use client";
 
+// Testing new device *Random Comment*
+
 import HomePage from "@/components/HomePage";
 import InitialAnimation from "@/components/InitialAnimation";
 import PageTransition from "@/utilities/PageTransition";
