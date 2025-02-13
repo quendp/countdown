@@ -50,9 +50,9 @@ export default function InitialAnimation({ setIsAnimationDone }) {
 
   return hideComponent || isNoAnimation ? <></> : (
     <div
-      className={`${containerClassName} initial-animation min-h-screen min-w-full fixed top-0 left-0 bg-gray-50 flex flex-col items-center justify-center`}
+      className={`${containerClassName} initial-animation min-h-screen min-w-full fixed top-0 left-0 bg-rose-300 flex flex-col items-center justify-center`}
     >
-      <p className="mb-0.5 pt-28 font-serif text-lg text-rose-300">
+      <p className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mt-10 font-serif text-lg text-rose-800">
         Franzel & Quen
       </p>
       <Image

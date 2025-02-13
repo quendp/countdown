@@ -53,7 +53,7 @@ export default function PoemTemplate({
               </div>
             ))}
           </div>
-          <p className="font-light text-xs mb-5 text-center">"{imageTitle}"</p>
+          <p className="font-light text-xs mb-5 text-center">&ldquo;{imageTitle}&rdquo;</p>
           <h1 className="font-serif text-rose-900 font-normal text-3xl mb-3 text-center">
             {title}
           </h1>

@@ -8,9 +8,11 @@ import React, { useMemo, useState } from "react";
 
 const startTime = "2023-09-23T18:55";
 
+const isSpecialEvent = true; // * Today is Valentine's Day
+
 const currentEvent = {
-  title: "Happy 13th Monthsary my love!",
-  link: "/monthsary/13",
+  title: "Ano ba meron ngayon? HAHAHAHA",
+  link: "/valentines/2025",
 };
 
 function FirstSection({ isAnimationDone }) {
@@ -72,7 +74,7 @@ function FirstSection({ isAnimationDone }) {
     >
       <p className="text-rose-300 text-sm flex justify-center items-center w-full -mt-10 mb-10">
         <span className="bg-rose-300 w-1/4 h-0.5" />
-        {isMonthsary ? (
+        {isMonthsary || isSpecialEvent ? (
           <span className="w-1/2 text-center text-rose-800 text-2xl font-bold">
             {currentEvent.title}
             <div className="flex justify-center items-center gap-2 mt-2">

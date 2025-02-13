@@ -170,3 +170,28 @@ body {
 .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
   border-color: #9f1239 !important;
 }
+
+/* Valentine's Day */
+
+.sceneContainer {
+	background: radial-gradient(circle at center, red, #670000) !important;
+  background: #000;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.heart-path {
+  position: absolute;
+  overflow: visible;
+}
+
+.letter-path {
+  vector-effect: non-scaling-stroke;
+}
+
+#scene {
+	width: 100%;
+	height: 100%;
+}
