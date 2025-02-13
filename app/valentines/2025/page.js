@@ -17,24 +17,27 @@ export default function Valentines2025() {
     <PageTransition key="home">
       <main className="sceneContainer">
         <div className="flex justify-between items-center">
-        <Link
-          className="self-start flex items-center gap-2 mb-5 text-xs font-sans p-3 text-rose-300 hover:text-rose-200 hover:bg-rose-950/20 rounded-lg transition-colors relative z-10 cursor-pointer"
-          href="/"
-          onClick={() => {
-            localStorage.setItem("noanimation", true);
-          }}
-        >
-          <ChevronLeft size={18} /> Go Back
-        </Link>
-        <Link
-          className="self-start flex items-center gap-2 mb-5 text-xs font-sans p-3 text-rose-300 hover:text-rose-200 hover:bg-rose-950/20 rounded-lg transition-colors relative z-10 cursor-pointer"
-          href="/valentines/2025/message"
-          onClick={() => {
-            localStorage.setItem("noanimation", true);
-          }}
-        >
-           Next<ChevronRight size={18} className=""/>
-        </Link>
+          <Link
+            className="self-start flex items-center gap-2 mb-5 text-xs font-sans p-3 text-rose-300 hover:text-rose-200 hover:bg-rose-950/20 rounded-lg transition-colors relative z-10 cursor-pointer"
+            href="/"
+            onClick={() => {
+              localStorage.setItem("noanimation", true);
+            }}
+          >
+            <ChevronLeft size={18} /> Go Back
+          </Link>
+          {!isLocked && (
+            <Link
+              className="self-start flex items-center gap-2 mb-5 text-xs font-sans p-3 text-rose-300 hover:text-rose-200 hover:bg-rose-950/20 rounded-lg transition-colors relative z-10 cursor-pointer"
+              href="/valentines/2025/message"
+              onClick={() => {
+                localStorage.setItem("noanimation", true);
+              }}
+            >
+              Next
+              <ChevronRight size={18} className="" />
+            </Link>
+          )}
         </div>
         {isLocked ? (
           <div className="flex justify-center items-center h-full">
