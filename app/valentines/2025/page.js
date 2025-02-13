@@ -1,16 +1,23 @@
 "use client";
 
+import delay from "@/utilities/delay";
 import PageTransition from "@/utilities/PageTransition";
 import ValentinesModal from "@/utilities/ValentinesModal";
 import ValentinesSvgEffect from "@/utilities/ValentinesSvgEffect";
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 
 export default function Valentines2025() {
   const [isLocked, setIsLocked] = useState(true);
+  const [opacity, setOpacity] = useState(0);
 
+  const handleUnlock = useCallback(async (value) => {
+    setIsLocked(value);
+    await delay(2000);
+    setOpacity(100);
+  }, [setIsLocked, setOpacity]);
 
   return (
     <PageTransition key="home">
@@ -26,9 +33,11 @@ export default function Valentines2025() {
         </Link>
         {
           isLocked ? (
-            <ValentinesModal setIsLocked={setIsLocked} />
+            <div className="flex justify-center items-center h-full">
+              <ValentinesModal setIsLocked={handleUnlock} />
+            </div>
           ) : (
-            <div className="overflow-hidden w-screen h-screen">
+            <div className={`overflow-hidden w-screen h-screen transition-opacity opacity-${opacity}`}>
               <ValentinesSvgEffect />
             </div>
           )
