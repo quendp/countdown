@@ -40,7 +40,7 @@ export default function Valentines2025() {
           )}
         </div>
         {isLocked ? (
-          <div className="flex justify-center items-center h-full">
+          <div className="flex justify-center items-center h-1/2">
             <ValentinesModal setIsLocked={setIsLocked} />
           </div>
         ) : (
