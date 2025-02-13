@@ -30,16 +30,15 @@ export default function Valentines2025() {
             <ValentinesModal setIsLocked={setIsLocked} />
           </div>
         ) : (
-          <div className="overflow-hidden w-screen h-screen">
+          <div className="relative overflow-hidden w-screen h-screen">
             <ValentinesSvgEffect />
             <Button
               variant="contained"
-              className="bg-rose-300 text-rose-800 absolute bottom-20 right-1/2 translate-x-1/2 z-10"
+              className="bg-rose-300 text-rose-800 fixed bottom-20 right-1/2 translate-x-1/2 z-50"
               sx={{
                 backgroundColor: "#fecdd3 !important",
                 color: "#9f1239 !important",
                 marginTop: "15px",
-                opacity: 0.7,
               }}
               onClick={() => router.push("/valentines/2025/message")}
             >
