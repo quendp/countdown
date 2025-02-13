@@ -34,7 +34,7 @@ export default function Valentines2025() {
             <ValentinesSvgEffect />
             <Button
               variant="contained"
-              className="bg-rose-300 text-rose-800 absolute bottom-20 right-1/2 translate-x-1/2"
+              className="bg-rose-300 text-rose-800 absolute bottom-20 right-1/2 translate-x-1/2 z-10"
               sx={{
                 backgroundColor: "#fecdd3 !important",
                 color: "#9f1239 !important",
