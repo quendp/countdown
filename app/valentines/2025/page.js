@@ -45,6 +45,9 @@ export default function Valentines2025() {
           </div>
         ) : (
           <div className="relative overflow-hidden w-screen h-screen">
+            <p className="text-center text-sm text-rose-300 font-sans text- absolute top-10 left-1/2 -translate-x-1/2 z-50 italic">
+              To my love <br/>Franzel Anne,
+            </p>
             <ValentinesSvgEffect />
             <Button
               variant="contained"
