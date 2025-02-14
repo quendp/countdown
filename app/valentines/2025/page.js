@@ -3,14 +3,11 @@
 import PageTransition from "@/utilities/PageTransition";
 import ValentinesModal from "@/utilities/ValentinesModal";
 import ValentinesSvgEffect from "@/utilities/ValentinesSvgEffect";
-import { Button } from "@mui/material";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function Valentines2025() {
-  const router = useRouter();
   const [isLocked, setIsLocked] = useState(true);
 
   return (
@@ -49,18 +46,6 @@ export default function Valentines2025() {
               To my love <br/>Franzel Anne,
             </p>
             <ValentinesSvgEffect />
-            <Button
-              variant="contained"
-              className="bg-rose-300 text-rose-800 fixed bottom-20 right-1/2 translate-x-1/2 z-50"
-              sx={{
-                backgroundColor: "#fecdd3 !important",
-                color: "#9f1239 !important",
-                marginTop: "15px",
-              }}
-              onClick={() => router.push("/valentines/2025/message")}
-            >
-              Next
-            </Button>
           </div>
         )}
       </main>

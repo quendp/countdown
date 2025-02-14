@@ -56,7 +56,7 @@ export default function ValentinesSvgEffect() {
         transformOrigin: "50% 50%",
         fill: "transparent",
         scale: 2,
-        y: -200, // Added this line to move letters up by 50 units
+        y: "-100", // Using percentage instead of fixed units
       });
     });
 
